@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #1B5E20;
+
+  /* Pakistani Business Color Palette */
+  --trust-green: #1B5E20;
+  --fresh-cream: #F5F5DC;
+  --premium-gold: #FFD700;
+  --pure-white: #FFFFFF;
+  --authority-blue: #1565C0;
+  --ramadan-gold: #D4AF37;
+  --quality-gray: #F5F5F5;
+  --punjab-green: #0F5132;
+
+  --font-inter: var(--font-inter);
+  --font-urdu: var(--font-urdu);
+}
+
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-trust-green: var(--trust-green);
+  --color-fresh-cream: var(--fresh-cream);
+  --color-premium-gold: var(--premium-gold);
+  --color-pure-white: var(--pure-white);
+  --color-authority-blue: var(--authority-blue);
+  --color-ramadan-gold: var(--ramadan-gold);
+  --color-quality-gray: var(--quality-gray);
+  --color-punjab-green: var(--punjab-green);
+
+  --font-sans: var(--font-inter);
+  --font-urdu: var(--font-urdu);
+
+  --animate-infinite-scroll: infinite-scroll 60s linear infinite;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}

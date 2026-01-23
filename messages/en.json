@@ -1,0 +1,212 @@
+{
+  "HomePage": {
+    "title": "Qasim Milk Shop",
+    "subtitle": "Freshness Delivered to Your Doorstep"
+  },
+  "Hero": {
+    "headline": "Pure. Fresh. Delivered Before Dawn.",
+    "subheadline": "Lahore's Most Trusted Milk Delivery Since 2019",
+    "ctaWhatsApp": "Order on WhatsApp",
+    "ctaProducts": "View Products",
+    "freeDelivery": "Free delivery on orders above Rs. 500",
+    "socialProof": "⭐ 4.9/5 from 3000+ reviews • Serving DHA, Gulberg, Model Town, Johar Town, Bahria Town",
+    "stats": {
+      "liters": "50,000+ Liters monthly",
+      "families": "10,000+ Happy families",
+      "years": "5 Years of trust",
+      "ontime": "Always on-time delivery"
+    },
+    "badges": {
+      "pfa": "Punjab Food Authority Registered",
+      "lab": "Daily Lab Tested",
+      "halal": "100% Halal Certified",
+      "time": "Delivered Before 6 AM",
+      "scale": "Serving 10,000+ Families"
+    }
+  },
+  "Ramadan": {
+    "title": "Ramadan Mubarak Special Offers",
+    "subtitle": "Unmatched Discounts in All of Lahore - Limited Time!",
+    "timerLabel": "Offer ends in:",
+    "days": "days",
+    "milkOffer": {
+      "name": "Ramadan Fresh Milk",
+      "save": "SAVE 20%",
+      "features": [
+        "100% Pure Buffalo/Cow Milk",
+        "Daily Lab Tested",
+        "Free Delivery"
+      ]
+    },
+    "yogurtOffer": {
+      "name": "Premium Creamy Yogurt",
+      "save": "BEST DEAL",
+      "features": [
+        "Thick & Creamy Dahi",
+        "Made Fresh Daily",
+        "No Preservatives"
+      ]
+    },
+    "familyBundle": {
+      "name": "Ramadan Family Bundle",
+      "badge": "Most Popular",
+      "description": "2L Milk Daily + 1kg Yogurt (3x/week)",
+      "slots": "Only {count} slots remaining!",
+      "cta": "Subscribe Now & Save"
+    },
+    "guarantee": "All Ramadan offers backed by our 100% purity guarantee",
+    "orderNow": "Order Now"
+  },
+  "Products": {
+    "title": "Our Fresh Dairy Products",
+    "subtitle": "Every product tested daily by Punjab Food Authority",
+    "categories": {
+      "all": "All",
+      "milk": "Milk",
+      "yogurt": "Yogurt",
+      "cream": "Cream",
+      "paneer": "Paneer",
+      "lassi": "Lassi"
+    },
+    "badges": {
+      "fresh": "Fresh Today",
+      "tested": "Lab Tested",
+      "limited": "Limited Stock",
+      "ramadan": "Ramadan Special"
+    },
+    "units": {
+      "liter": "liter",
+      "kg": "kg"
+    },
+    "actions": {
+      "addToCart": "Add to Cart",
+      "quickOrder": "Quick Order",
+      "inStock": "In Stock",
+      "orderTomorrow": "Order Tomorrow"
+    },
+    "details": {
+      "source": "Source Farm",
+      "lastTest": "Last Test Date",
+      "purity": "Purity Percentage"
+    }
+  },
+  "Trust": {
+    "title": "Why 10,000+ Lahore Families Trust Qasim Milk Shop",
+    "subtitle": "Transparency and quality are our promises",
+    "certs": {
+      "pfa": {
+        "title": "Punjab Food Authority Registered",
+        "badge": "Registered & Verified",
+        "desc": "Licensed by Punjab Food Authority",
+        "number": "PD-0000270431",
+        "valid": "Dec 2026",
+        "btn": "View Certificate"
+      },
+      "lab": {
+        "title": "Daily Lab Testing",
+        "badge": "Tested Daily",
+        "desc": "Every batch lab tested before delivery",
+        "btn": "View Today's Report"
+      },
+      "halal": {
+        "title": "Halal Certification",
+        "badge": "100% Halal",
+        "desc": "Certified Halal by National Halal Council",
+        "btn": "View Certificate"
+      },
+      "purity": {
+        "title": "Quality Guarantee",
+        "badge": "Purity Guarantee",
+        "desc": "100% Pure - No Water, No Additives",
+        "btn": "Our Quality Promise"
+      }
+    },
+    "process": {
+      "step1": {
+        "title": "Collection",
+        "time": "4 AM",
+        "desc": "Fresh milk collected from verified farms"
+      },
+      "step2": {
+        "title": "Lab Testing",
+        "time": "5 AM",
+        "desc": "Tested for purity, fat content, additives"
+      },
+      "step3": {
+        "title": "Storage",
+        "time": "5:30 AM",
+        "desc": "Stored at optimal temperature"
+      },
+      "step4": {
+        "title": "Delivery",
+        "time": "Before 6:30 AM",
+        "desc": "Delivered fresh to your doorstep"
+      }
+    },
+    "stats": {
+      "families": "10,000+ Happy Families",
+      "liters": "50,000+ Liters Monthly",
+      "years": "5 Years of Trust",
+      "ontime": "99.8% On-Time Delivery"
+    },
+    "comparison": {
+      "title": "Qasim Milk Shop vs Others",
+      "features": [
+        "Punjab Food Authority Registered",
+        "Daily Lab Testing",
+        "Purity Guarantee",
+        "Before-Dawn Delivery",
+        "No Middlemen",
+        "Ramadan Specials"
+      ],
+      "qasim": "Qasim Milk Shop",
+      "others": "Others"
+    }
+  },
+  "Subscription": {
+    "title": "Daily Fresh Milk Subscription",
+    "subtitle": "Save up to 15% • Never run out • Cancel anytime",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "saveExtra": "10% Extra Discount",
+    "popular": "Most Popular",
+    "subscribedCount": "2,500+ families subscribed",
+    "saveVsDaily": "Save {amount} vs. daily orders",
+    "plans": {
+      "starter": {
+        "name": "Starter Plan",
+        "desc": "Perfect for individuals and couples",
+        "price": 6600,
+        "features": [
+          "1 Liter Daily",
+          "Morning Delivery",
+          "Pause anytime"
+        ]
+      },
+      "family": {
+        "name": "Family Plan",
+        "desc": "Most loved by families of 4",
+        "price": 12500,
+        "features": [
+          "2 Liters Daily",
+          "Morning Delivery",
+          "Free 1kg Yogurt Weekly",
+          "Priority Support"
+        ]
+      },
+      "premium": {
+        "name": "Premium Bundle",
+        "desc": "Complete dairy solution",
+        "price": 24000,
+        "features": [
+          "4 Liters Daily",
+          "Daily Delivery",
+          "Free 1kg Yogurt 3x/week",
+          "Monthly Lab Report",
+          "VIP Support"
+        ]
+      }
+    },
+    "cta": "Start Subscription"
+  }
+}
