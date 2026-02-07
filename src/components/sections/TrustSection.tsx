@@ -62,14 +62,7 @@ export const TrustSection = () => {
                footer="Batch: #QM-992 | Today 4 AM"
                btnText={t("certs.lab.btn")}
              />
-             <CertCard 
-               image="/images/trust/halal-cert.png"
-               title={t("certs.halal.title")}
-               badge={t("certs.halal.badge")}
-               desc={t("certs.halal.desc")}
-               footer="NHC Verified | 2026"
-               btnText={t("certs.halal.btn")}
-             />
+             {/* Halal Cert Removed */}
              <CertCard 
                image="/images/trust/quality-seal.png"
                title={t("certs.purity.title")}

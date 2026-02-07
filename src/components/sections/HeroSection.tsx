@@ -1,78 +1,53 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { WhatsAppFloatingButton } from "../ui/whatsapp-button";
 import { Link } from "@/i18n/routing";
 import { 
   PhoneCall, 
-  ShoppingCart, 
-  CheckCircle, 
-  ShieldCheck, 
-  Droplet, 
-  Clock, 
-  Users, 
-  Trophy,
-  History 
+  Star,
+  CheckCircle,
+  MapPin
 } from "lucide-react";
-import { fadeInUp, staggerContainer, scaleOnHover, gentlePulse } from "@/lib/animations";
+import { fadeInUp, staggerContainer, scaleOnHover } from "@/lib/animations";
 
 export const HeroSection = () => {
   const t = useTranslations("Hero");
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
+  const rT = useTranslations("Ramadan");
 
   return (
     <section 
-      ref={containerRef}
-      className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden bg-white pt-20"
+      className="relative min-h-[90vh] flex flex-col items-center justify-start pt-32 overflow-hidden bg-white"
       aria-label="Hero Section"
     >
-      {/* Background Image with Parallax */}
-      <motion.div 
-        style={{ y: backgroundY }}
-        className="absolute inset-0 z-0"
-      >
+      {/* Background Image - Static for performance */}
+      <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero/hero-bg.png"
           alt="Fresh Milk Pouring"
           fill
           priority
-          className="object-cover opacity-30 md:opacity-50"
+          className="object-cover opacity-20 md:opacity-40"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/40 to-white" />
-        <div className="absolute inset-0 bg-gradient-to-r from-trust-green/5 to-transparent" />
-      </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/50 to-white" />
+      </div>
+
+      {/* Ramadan Banner */}
+      <div className="absolute top-0 w-full bg-ramadan-gold text-white text-center py-2 z-20 font-bold animate-pulse">
+        {rT("title")} - {rT("milkOffer.save")}!
+      </div>
 
       {/* Main Content Container */}
-      <div className="container relative z-10 mx-auto px-4 md:px-6 max-w-7xl">
+      <div className="container relative z-10 mx-auto px-4 md:px-6 max-w-7xl mt-10">
         <motion.div
            variants={staggerContainer}
            initial="hidden"
            animate="visible"
-           style={{ y: contentY }}
-           className="flex flex-col items-center text-center space-y-8"
+           className="flex flex-col items-center text-center space-y-6"
         >
-          {/* Logo & Ship Name */}
-          <motion.div variants={fadeInUp} className="flex items-center gap-2 mb-2">
-            <motion.div variants={gentlePulse} animate="pulse" className="bg-trust-green p-2 rounded-full shadow-lg">
-              <Droplet className="text-white w-6 h-6" />
-            </motion.div>
-            <span className="text-xl md:text-2xl font-bold text-trust-green tracking-tight font-sans">
-              Qasim Milk Shop
-            </span>
-          </motion.div>
-
           {/* Headline */}
           <div className="space-y-4">
             <motion.h1 
@@ -87,17 +62,20 @@ export const HeroSection = () => {
             >
               {t("subheadline")}
             </motion.p>
+             <motion.div variants={fadeInUp} className="flex items-center justify-center gap-2 text-gray-500 text-sm">
+                <MapPin size={16} />
+                <span>{t("socialProof")}</span>
+             </motion.div>
           </div>
 
-          {/* Trust Badges Row */}
-          <motion.div 
-            variants={fadeInUp}
-            className="flex flex-wrap justify-center gap-4 md:gap-8 py-4 overflow-x-auto no-scrollbar max-w-full"
-          >
-            <TrustItem icon={<ShieldCheck size={18} />} label={t("badges.pfa")} />
-            <TrustItem icon={<CheckCircle size={18} />} label={t("badges.lab")} />
-            <TrustItem icon={<Droplet size={18} />} label={t("badges.halal")} />
-            <TrustItem icon={<Clock size={18} />} label={t("badges.time")} />
+          {/* Pricing Highlight */}
+          <motion.div variants={fadeInUp} className="bg-red-50 border-2 border-red-100 p-4 rounded-2xl max-w-md w-full mx-auto my-4 transform -rotate-1">
+             <p className="text-red-500 font-bold mb-1 uppercase tracking-wider text-xs">{rT("milkOffer.name")}</p>
+             <div className="flex items-end justify-center gap-2">
+               <span className="text-4xl font-black text-red-600 font-sans">Rs. 200</span>
+               <span className="text-lg text-gray-400 line-through font-sans mb-1">Rs. 230</span>
+               <span className="text-sm font-bold text-red-500 mb-2">/ Liter</span>
+             </div>
           </motion.div>
 
           {/* CTA Group */}
@@ -106,7 +84,7 @@ export const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4"
           >
             <motion.a
-              href="https://wa.me/923001234567"
+              href="https://wa.me/9230104524400"
               variants={scaleOnHover}
               whileHover="hover"
               whileTap="tap"
@@ -122,44 +100,6 @@ export const HeroSection = () => {
               {t("ctaProducts")}
             </Link>
           </motion.div>
-
-          {/* Free Delivery Promo */}
-          <motion.p 
-            variants={fadeInUp}
-            className="text-sm font-semibold text-ramadan-gold animate-bounce"
-          >
-            ⚡ {t("freeDelivery")}
-          </motion.p>
-        </motion.div>
-      </div>
-
-      {/* Stats Section Overlay */}
-      <div className="w-full mt-20 bg-quality-gray/80 backdrop-blur-md border-y border-gray-100 py-10 z-10">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatItem icon={<Droplet className="text-trust-green"/>} label={t("stats.liters")} />
-            <StatItem icon={<Users className="text-trust-green"/>} label={t("stats.families")} />
-            <StatItem icon={<Trophy className="text-trust-green"/>} label={t("stats.years")} />
-            <StatItem icon={<History className="text-trust-green"/>} label={t("stats.ontime")} />
-          </div>
-        </div>
-      </div>
-
-      {/* Scrolling Social Proof Strip */}
-      <div className="w-full bg-trust-green py-3 overflow-hidden z-10 relative">
-        <motion.div 
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-          className="flex whitespace-nowrap text-white font-bold text-sm md:text-base gap-20 uppercase tracking-widest px-10"
-        >
-          {[...Array(2)].map((_, i) => (
-             <span key={i} className="flex gap-20 items-center">
-               <span>{t("socialProof")}</span>
-               <span className="text-premium-gold">★ ★ ★ ★ ★</span>
-               <span>{t("socialProof")}</span>
-               <span className="text-premium-gold">★ ★ ★ ★ ★</span>
-             </span>
-          ))}
         </motion.div>
       </div>
     </section>

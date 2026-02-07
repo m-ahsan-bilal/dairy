@@ -1,153 +1,144 @@
 {
   "HomePage": {
     "title": "Qasim Milk Shop",
-    "subtitle": "Freshness Delivered to Your Doorstep"
+    "subtitle": "Pure and Fresh Milk Delivered to Your Doorstep"
   },
   "Hero": {
-    "headline": "Pure. Fresh. Delivered Before Dawn.",
-    "subheadline": "Lahore's Most Trusted Milk Delivery Since 2019",
+    "headline": "Pure. Fresh. Delivered Morning & Evening.",
+    "subheadline": "Shad Bagh's Most Trusted Milk Delivery Service",
     "ctaWhatsApp": "Order on WhatsApp",
     "ctaProducts": "View Products",
     "freeDelivery": "Free delivery on orders above Rs. 500",
-    "socialProof": "⭐ 4.9/5 from 3000+ reviews • Serving DHA, Gulberg, Model Town, Johar Town, Bahria Town",
+    "socialProof": "⭐ 4.5 Google Reviews • Serving Shad Bagh, China Scheme, Wassan Pura",
     "stats": {
-      "liters": "50,000+ Liters monthly",
-      "families": "10,000+ Happy families",
-      "years": "5 Years of trust",
-      "ontime": "Always on-time delivery"
+      "liters": "Daily Fresh Supply",
+      "families": "Hundreds of Happy Families",
+      "years": "Years of Trust",
+      "ontime": "Twice Daily Delivery"
     },
     "badges": {
       "pfa": "Punjab Food Authority Registered",
       "lab": "Daily Lab Tested",
-      "halal": "100% Halal Certified",
-      "time": "Delivered Before 6 AM",
-      "scale": "Serving 10,000+ Families"
+      "halal": "100% Pure",
+      "time": "Morning & Evening Delivery",
+      "scale": "Serving Local Community"
     }
   },
   "Ramadan": {
     "title": "Ramadan Mubarak Special Offers",
-    "subtitle": "Unmatched Discounts in All of Lahore - Limited Time!",
+    "subtitle": "Unmatched Discounts in Lahore - Limited Time!",
     "timerLabel": "Offer ends in:",
     "days": "days",
     "milkOffer": {
-      "name": "Ramadan Fresh Milk",
-      "save": "SAVE 20%",
+      "name": "Ramadan Special Milk",
+      "save": "Save Rs. 30",
       "features": [
         "100% Pure Buffalo/Cow Milk",
-        "Daily Lab Tested",
-        "Free Delivery"
+        "No Powder or Chemicals",
+        "Rs. 200/Liter (Regular Rs. 230)"
       ]
     },
     "yogurtOffer": {
       "name": "Premium Creamy Yogurt",
-      "save": "BEST DEAL",
+      "save": "Save Rs. 60",
       "features": [
         "Thick & Creamy Dahi",
-        "Made Fresh Daily",
-        "No Preservatives"
+        "Freshly Made Daily",
+        "Rs. 200/kg (Regular Rs. 260)"
       ]
     },
     "familyBundle": {
       "name": "Ramadan Family Bundle",
       "badge": "Most Popular",
-      "description": "2L Milk Daily + 1kg Yogurt (3x/week)",
+      "description": "2L Milk Daily + 1kg Yogurt",
       "slots": "Only {count} slots remaining!",
-      "cta": "Subscribe Now & Save"
+      "cta": "Subscribe Now"
     },
     "guarantee": "All Ramadan offers backed by our 100% purity guarantee",
     "orderNow": "Order Now"
   },
   "Products": {
-    "title": "Our Fresh Dairy Products",
-    "subtitle": "Every product tested daily by Punjab Food Authority",
+    "title": "Our Fresh Products",
+    "subtitle": "Every product approved by Punjab Food Authority",
     "categories": {
       "all": "All",
       "milk": "Milk",
       "yogurt": "Yogurt",
-      "cream": "Cream",
-      "paneer": "Paneer",
-      "lassi": "Lassi"
+      "sweets": "Sweets",
+      "dairy": "Other Dairy"
     },
     "badges": {
       "fresh": "Fresh Today",
       "tested": "Lab Tested",
       "limited": "Limited Stock",
-      "ramadan": "Ramadan Special"
+      "ramadan": "Ramadan Offer"
     },
     "units": {
-      "liter": "liter",
+      "liter": "Liter",
       "kg": "kg"
     },
     "actions": {
       "addToCart": "Add to Cart",
       "quickOrder": "Quick Order",
       "inStock": "In Stock",
-      "orderTomorrow": "Order Tomorrow"
+      "orderTomorrow": "Order for Tomorrow"
     },
     "details": {
       "source": "Source Farm",
-      "lastTest": "Last Test Date",
-      "purity": "Purity Percentage"
+      "lastTest": "Last Test",
+      "purity": "Purity"
     }
   },
   "Trust": {
-    "title": "Why 10,000+ Lahore Families Trust Qasim Milk Shop",
-    "subtitle": "Transparency and quality are our promises",
+    "title": "Why Trust Qasim Milk Shop?",
+    "subtitle": "Transparency and Quality are our Promises",
     "certs": {
       "pfa": {
         "title": "Punjab Food Authority Registered",
-        "badge": "Registered & Verified",
-        "desc": "Licensed by Punjab Food Authority",
-        "number": "PD-0000270431",
-        "valid": "Dec 2026",
+        "badge": "Verified",
+        "desc": "Licensed & Approved",
         "btn": "View Certificate"
       },
       "lab": {
         "title": "Daily Lab Testing",
         "badge": "Tested Daily",
-        "desc": "Every batch lab tested before delivery",
-        "btn": "View Today's Report"
-      },
-      "halal": {
-        "title": "Halal Certification",
-        "badge": "100% Halal",
-        "desc": "Certified Halal by National Halal Council",
-        "btn": "View Certificate"
+        "desc": "Every batch tested before delivery",
+        "btn": "View Report"
       },
       "purity": {
         "title": "Quality Guarantee",
         "badge": "Purity Guarantee",
         "desc": "100% Pure - No Water, No Additives",
-        "btn": "Our Quality Promise"
+        "btn": "Our Promise"
       }
     },
     "process": {
       "step1": {
-        "title": "Collection",
-        "time": "4 AM",
-        "desc": "Fresh milk collected from verified farms"
+        "title": "Fresh Milk",
+        "time": "Morning/Evening",
+        "desc": "Collection from farms"
       },
       "step2": {
-        "title": "Lab Testing",
-        "time": "5 AM",
-        "desc": "Tested for purity, fat content, additives"
+        "title": "Lab Test",
+        "time": "On Arrival",
+        "desc": "Purity and Fat test"
       },
       "step3": {
-        "title": "Storage",
-        "time": "5:30 AM",
-        "desc": "Stored at optimal temperature"
+        "title": "Cooling",
+        "time": "Storage",
+        "desc": "Stored in chillers"
       },
       "step4": {
         "title": "Delivery",
-        "time": "Before 6:30 AM",
-        "desc": "Delivered fresh to your doorstep"
+        "time": "10 AM / 8 PM",
+        "desc": "To your doorstep"
       }
     },
     "stats": {
-      "families": "10,000+ Happy Families",
-      "liters": "50,000+ Liters Monthly",
-      "years": "5 Years of Trust",
-      "ontime": "99.8% On-Time Delivery"
+      "families": "Hundreds of Happy Families",
+      "liters": "Daily Fresh Supply",
+      "years": "Years of Trust",
+      "ontime": "On-Time Delivery"
     },
     "comparison": {
       "title": "Qasim Milk Shop vs Others",
@@ -155,9 +146,9 @@
         "Punjab Food Authority Registered",
         "Daily Lab Testing",
         "Purity Guarantee",
-        "Before-Dawn Delivery",
-        "No Middlemen",
-        "Ramadan Specials"
+        "Home Delivery",
+        "Cow Milk for Kids Available",
+        "Ramadan Special Discounts"
       ],
       "qasim": "Qasim Milk Shop",
       "others": "Others"
@@ -165,48 +156,99 @@
   },
   "Subscription": {
     "title": "Daily Fresh Milk Subscription",
-    "subtitle": "Save up to 15% • Never run out • Cancel anytime",
+    "subtitle": "Get monthly subscription • Contact on WhatsApp",
     "monthly": "Monthly",
     "yearly": "Yearly",
-    "saveExtra": "10% Extra Discount",
-    "popular": "Most Popular",
-    "subscribedCount": "2,500+ families subscribed",
-    "saveVsDaily": "Save {amount} vs. daily orders",
-    "plans": {
-      "starter": {
-        "name": "Starter Plan",
-        "desc": "Perfect for individuals and couples",
-        "price": 6600,
-        "features": [
-          "1 Liter Daily",
-          "Morning Delivery",
-          "Pause anytime"
-        ]
-      },
-      "family": {
-        "name": "Family Plan",
-        "desc": "Most loved by families of 4",
-        "price": 12500,
-        "features": [
-          "2 Liters Daily",
-          "Morning Delivery",
-          "Free 1kg Yogurt Weekly",
-          "Priority Support"
-        ]
-      },
-      "premium": {
-        "name": "Premium Bundle",
-        "desc": "Complete dairy solution",
-        "price": 24000,
-        "features": [
-          "4 Liters Daily",
-          "Daily Delivery",
-          "Free 1kg Yogurt 3x/week",
-          "Monthly Lab Report",
-          "VIP Support"
-        ]
-      }
+    "riskReversal": "Cancel anytime",
+    "ctaBottom": {
+      "text": "Not ready to subscribe?",
+      "btn": "Order One-time"
+    }
+  },
+  "Areas": {
+    "title": "Our Delivery Service",
+    "subtitle": "Available in Shad Bagh and surrounding areas",
+    "status": "Available",
+    "familiesServed": "Happy Customers",
+    "deliveryTime": "10 AM & 8 PM",
+    "search": {
+      "placeholder": "Enter your area",
+      "btn": "Check",
+      "success": "Yes! We deliver to {area}",
+      "comingSoon": "Coming soon to {area}",
+      "waitlist": "Join waitlist"
     },
-    "cta": "Start Subscription"
+    "expansion": {
+      "title": "Don't see your area?",
+      "text": "We are expanding! Request delivery for your area",
+      "btn": "Request Delivery"
+    },
+    "guarantee": {
+      "ontime": "On-time Delivery",
+      "morning": "Twice Daily",
+      "alerts": "WhatsApp Order",
+      "temp": "Pure & Fresh"
+    }
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "subtitle": "Order via WhatsApp or Call Us",
+    "whatsapp": {
+      "title": "WhatsApp",
+      "cta": "Order Now",
+      "status": "Available 24/7"
+    },
+    "phone": {
+      "title": "Call Us",
+      "cta": "0310 4524400",
+      "status": "7 AM - 12:30 AM"
+    },
+    "location": {
+      "title": "Shop Address",
+      "address": "Iqbal Rd, Shad Bagh, Lahore",
+      "cta": "Get Directions"
+    },
+    "form": {
+      "title": "Quick Order Form",
+      "name": "Your Name",
+      "phone": "Phone Number",
+      "area": "Select Area",
+      "product": "Product",
+      "quantity": "Quantity",
+      "message": "Special Instructions",
+      "submit": "Send on WhatsApp"
+    }
+  },
+  "Footer": {
+    "brand": {
+      "tagline": "Pure. Fresh. Trusted.",
+      "desc": "Best Milk and Yogurt in Shad Bagh, Lahore."
+    },
+    "links": {
+      "title": "Links",
+      "home": "Home",
+      "products": "Products",
+      "plans": "Subscription",
+      "ramadan": "Ramadan Offers",
+      "about": "About Us"
+    },
+    "products": {
+      "title": "Products",
+      "milk": "Fresh Milk",
+      "yogurt": "Yogurt",
+      "khoya": "Khoya / Barfi",
+      "ghee": "Desi Ghee"
+    },
+    "contact": {
+      "title": "Contact",
+      "address": "Iqbal Rd, Shad Bagh, Lahore"
+    },
+    "bottom": {
+      "rights": "© 2026 Qasim Milk Shop. All rights reserved.",
+      "pfa": "Punjab Food Authority Registered",
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions",
+      "madeWith": "Made in Lahore"
+    }
   }
 }

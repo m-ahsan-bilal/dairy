@@ -5,13 +5,12 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
-import { WhatsAppFloatingButton } from "@/components/ui/whatsapp-button";
+import { Header } from "@/components/layout/Header";
+import { FloatingContact } from "@/components/layout/FloatingContact";
 import { OfflineBanner } from "@/components/ui/offline-banner";
-import { LoadingScreen } from "@/components/ui/loading-screen";
-import { Suspense } from "react";
+import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-// Fallback to system font if import fails or variable not found, but this is standard
 const notoNastaliqUrdu = Noto_Nastaliq_Urdu({
   subsets: ["arabic"],
   weight: ["400", "700"],
@@ -47,11 +46,11 @@ export default async function LocaleLayout({
         className={`${inter.variable} ${notoNastaliqUrdu.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
-          <OfflineBanner />
-          <Suspense fallback={<LoadingScreen />}>
+            <OfflineBanner />
+            <SchemaMarkup />
+            <Header />
             {children}
-          </Suspense>
-          <WhatsAppFloatingButton />
+            <FloatingContact />
         </NextIntlClientProvider>
       </body>
     </html>

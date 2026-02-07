@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { scaleOnHover } from "@/lib/animations";
 import { formatPKR } from "@/lib/utils";
 import { useState } from "react";
+import { useCart } from "@/context/CartContext";
 
 interface ProductCardProps {
   id: string;
@@ -26,6 +27,14 @@ export function ProductCard({
   isFreshToday = true 
 }: ProductCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const { addToCart } = useCart();
+  const [isAdded, setIsAdded] = useState(false);
+
+  const handleAddToCart = () => {
+    addToCart({ id, name, price, quantity: 1 });
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 2000);
+  };
 
   return (
     <motion.div 
@@ -91,8 +100,20 @@ export function ProductCard({
           )}
         </div>
 
-        <button className="w-full bg-trust-green text-white py-2 rounded-lg font-bold hover:bg-opacity-90 transition active:scale-95 flex items-center justify-center gap-2">
-          Add to Cart <span className="text-xl leading-none">+</span>
+        <button 
+          onClick={handleAddToCart}
+          className="w-full bg-trust-green text-white py-2 rounded-lg font-bold hover:bg-opacity-90 transition active:scale-95 flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-not-allowed"
+          disabled={stockLevel === 'out'}
+        >
+          {isAdded ? (
+            <>
+              Added! <span className="text-xl leading-none">✓</span>
+            </>
+          ) : (
+             <>
+              Add to Cart <span className="text-xl leading-none">+</span>
+            </>
+          )}
         </button>
       </div>
     </motion.div>

@@ -1,17 +1,15 @@
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TrustBadge } from "@/components/trust/TrustBadge";
-import { PurityIndicator } from "@/components/trust/PurityIndicator";
-import { DeliveryTimeIndicator } from "@/components/ui/delivery-time-indicator";
-import { RamadanSection } from "@/components/sections/RamadanSection";
 import { ProductsSection } from "@/components/sections/ProductsSection";
 import { TrustSection } from "@/components/sections/TrustSection";
 import { SubscriptionSection } from "@/components/sections/SubscriptionSection";
+import { AreasSection } from "@/components/sections/AreasSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function HomePage() {
   return (
     <main className="flex flex-col min-h-screen">
       <HeroSection />
-      <RamadanSection />
 
       <section className="py-20 container mx-auto px-4 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -27,11 +25,6 @@ export default function HomePage() {
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <TrustBadge 
-                type="halal" 
-                label="Halal" 
-                tooltipText="Certified by National Halal Council" 
-              />
-              <TrustBadge 
                 type="pfa" 
                 label="PFA Approved" 
                 tooltipText="Verified by Punjab Food Authority" 
@@ -44,8 +37,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="flex justify-center flex-col gap-6">
-            <PurityIndicator purityScore={100} lastTested="Today, 4:00 AM" />
-            <DeliveryTimeIndicator />
+            {/* Components removed as per user request */}
           </div>
         </div>
       </section>
@@ -54,20 +46,15 @@ export default function HomePage() {
 
       <ProductsSection />
 
+      <AreasSection />
+
+
+
+
+
       <SubscriptionSection />
 
-      <footer className="bg-trust-green text-white py-12">
-         <div className="container mx-auto px-4 max-w-7xl text-center">
-            <p className="font-bold text-xl mb-4">Qasim Milk Shop</p>
-            <p className="opacity-70 text-sm mb-6">Serving purity across Lahore since 2019</p>
-            <div className="flex justify-center gap-6 mb-8 underline decoration-premium-gold underline-offset-4">
-              <a href="#">Terms</a>
-              <a href="#">Privacy</a>
-              <a href="#">Lab Reports</a>
-            </div>
-            <p className="text-xs opacity-50 font-sans">© 2026 Qasim Milk Shop. All rights reserved.</p>
-         </div>
-      </footer>
+      <ContactSection />
     </main>
   );
 }

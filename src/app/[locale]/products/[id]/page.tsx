@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { formatPKR } from "@/lib/utils";
 import { getTranslations } from "next-intl/server";
+import { WhatsAppOrderButton } from "@/components/ui/whatsapp-order-button";
 
 // ISR Configuration
 export const revalidate = 3600; // Revalidate every hour
@@ -39,9 +40,7 @@ export default async function ProductPage({
           <h1 className="text-3xl font-bold text-pk-primary mb-2">{product.name}</h1>
           <p className="text-2xl text-pk-gold font-bold mb-4">{formatPKR(product.price)}</p>
           <p className="text-gray-700 mb-6">{product.description}</p>
-          <button className="bg-pk-primary text-white px-8 py-3 rounded-full hover:bg-opacity-90 transition">
-            Order Now
-          </button>
+          <WhatsAppOrderButton productName={product.name} productPrice={product.price} />
         </div>
       </div>
     </div>
