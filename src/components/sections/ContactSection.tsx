@@ -175,6 +175,7 @@ const handleSubmit = (e: React.FormEvent) => {
                    required
                    placeholder={t("form.name")}
                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-trust-green/20 focus:border-trust-green transition-all"
+                   value={formData.name}
                    onChange={handleChange}
                  />
                  <input 
@@ -186,6 +187,7 @@ const handleSubmit = (e: React.FormEvent) => {
                      "w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-trust-green/20 focus:border-trust-green transition-all",
                      error ? "border-red-300 focus:border-red-500 focus:ring-red-200" : ""
                    )}
+                   value={formData.phone}
                    onChange={(e) => {
                      handleChange(e);
                      if(error) setError("");
@@ -199,7 +201,7 @@ const handleSubmit = (e: React.FormEvent) => {
                    required
                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-trust-green/20 focus:border-trust-green transition-all text-gray-600"
                    onChange={handleChange}
-                   defaultValue=""
+                   value={formData.area}
                  >
                     <option value="" disabled>{t("form.area")}</option>
                     <option value="Shad Bagh">Shad Bagh</option>
@@ -213,7 +215,7 @@ const handleSubmit = (e: React.FormEvent) => {
                    required
                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-trust-green/20 focus:border-trust-green transition-all text-gray-600"
                    onChange={handleChange}
-                   defaultValue=""
+                   value={formData.product}
                  >
                     <option value="" disabled>{t("form.product")}</option>
                     <option value="Milk">Fresh Milk</option>
@@ -235,7 +237,7 @@ const handleSubmit = (e: React.FormEvent) => {
                    name="type" 
                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-trust-green/20 focus:border-trust-green transition-all text-gray-600"
                    onChange={handleChange}
-                   defaultValue="oneTime"
+                   value={formData.type}
                  >
                     <option value="oneTime">{t("form.types.oneTime")}</option>
                     <option value="subscription">{t("form.types.subscription")}</option>

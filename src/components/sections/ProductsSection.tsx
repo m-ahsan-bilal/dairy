@@ -52,19 +52,6 @@ export const ProductsSection = () => {
       reviewCount: 3000,
     },
     {
-      id: 'cow-milk',
-      category: 'milk',
-      image: '/images/products/cow-milk.png',
-      price: 220,
-      unit: 'liter',
-      inStock: true,
-      testedToday: true,
-      freshBatch: true,
-      purity: 100,
-      rating: 4.8,
-      reviewCount: 500,
-    },
-    {
       id: 'yogurt',
       category: 'yogurt',
       image: '/images/products/yogurt-bowl.png',
@@ -129,19 +116,6 @@ export const ProductsSection = () => {
       purity: 100,
       rating: 4.9,
       reviewCount: 120,
-    },
-    {
-      id: 'kheer',
-      category: 'sweets',
-      image: '/images/products/kheer.png',
-      price: 500,
-      unit: 'kg', // or per bowl, assuming kg for consistency or generic unit
-      inStock: true,
-      testedToday: true,
-      freshBatch: true,
-      purity: 100,
-      rating: 4.9,
-      reviewCount: 500,
     }
   ], []);
 
@@ -189,7 +163,7 @@ export const ProductsSection = () => {
         {/* Grid */}
         <motion.div 
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8"
         >
           <AnimatePresence mode="popLayout">
             {filteredProducts.map((product) => (
@@ -214,92 +188,58 @@ const ProductCard = ({ product }: { product: Product }) => {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
-      whileHover={{ y: -5 }}
-      className="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex flex-col group relative"
+      whileHover={{ y: -5, borderColor: "var(--trust-green)" }}
+      className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 flex flex-col group relative transition-all duration-300"
     >
-      {/* Badges Overlays */}
+      {/* Badges */}
       <div className="absolute top-3 left-3 z-10 flex flex-col gap-1">
-        {product.freshBatch && (
-          <span className="bg-trust-green text-white text-[10px] font-black px-2 py-1 rounded-full shadow-sm flex items-center gap-1">
-            <Leaf size={10} /> {t("badges.fresh")}
-          </span>
-        )}
-        {product.testedToday && (
-          <span className="bg-authority-blue text-white text-[10px] font-black px-2 py-1 rounded-full shadow-sm flex items-center gap-1">
-            <FlaskConical size={10} /> {t("badges.tested")}
-          </span>
-        )}
         {product.ramadanPrice && (
-          <span className="bg-ramadan-gold text-white text-[10px] font-black px-2 py-1 rounded-full shadow-sm">
-             🌙 {t("badges.ramadan")}
-          </span>
+           <span className="bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-md shadow-sm">
+             -{Math.round(((product.price - product.ramadanPrice) / product.price) * 100)}% OFF
+           </span>
         )}
       </div>
 
       {/* Image Section */}
-      <div className="relative h-64 w-full bg-gray-50 overflow-hidden">
+      <div className="relative h-56 w-full bg-white p-4">
         <Image 
           src={product.image} 
           alt={product.id} 
           fill 
-          className="object-contain p-6 group-hover:scale-110 transition-transform duration-700"
+          className="object-contain group-hover:scale-105 transition-transform duration-500"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
 
       {/* Info Section */}
-      <div className="p-6 flex-grow flex flex-col">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className="text-xl font-bold text-trust-green font-urdu">{product.id.split('-').map(s=>s.charAt(0).toUpperCase()+s.slice(1)).join(' ')}</h3>
-          <div className="flex items-center gap-1 text-premium-gold">
-            <Star size={14} fill="currentColor" />
-            <span className="text-xs font-bold text-gray-500">{product.rating} ({product.reviewCount})</span>
-          </div>
-        </div>
+      <div className="p-4 flex-grow flex flex-col text-center">
+        <h3 className="text-lg font-bold text-gray-800 mb-1 group-hover:text-trust-green transition-colors font-sans">
+          {product.id.split('-').map(s=>s.charAt(0).toUpperCase()+s.slice(1)).join(' ')}
+        </h3>
         
-        <p className="text-gray-500 text-sm mb-4 line-clamp-2">Direct from the farm, chilled to maintain peak freshness and nutritional value.</p>
-        
-        {/* Features icons */}
-        <div className="flex gap-4 mb-6">
-           <FeatureIcon icon={<CheckCircle2 size={14}/>} label="100% Pure" />
-           <FeatureIcon icon={<Leaf size={14}/>} label="No Additives" />
-        </div>
-
         {/* Pricing */}
-        <div className="mt-auto mb-6">
-          <div className="flex items-end gap-2">
-            <span className="text-3xl font-black text-trust-green font-sans">
+        <div className="mb-4">
+          <div className="flex items-center justify-center gap-2">
+            <span className="text-xl font-bold text-trust-green">
               {formatPKR(product.ramadanPrice || product.price)}
             </span>
-            <span className="text-sm text-gray-400 font-medium mb-1 line-clamp-1">
-              / {t(`units.${product.unit}`)}
-            </span>
+            {product.ramadanPrice && (
+               <span className="text-sm text-gray-400 line-through">
+                 {formatPKR(product.price)}
+               </span>
+            )}
           </div>
-          {product.ramadanPrice && (
-            <div className="flex gap-2 items-center mt-1">
-               <span className="text-sm text-gray-400 line-through font-sans">{formatPKR(product.price)}</span>
-               <span className="text-xs font-bold text-red-500">Save {formatPKR(product.price - product.ramadanPrice)}</span>
-            </div>
-          )}
         </div>
 
-        {/* Action Section */}
-        <div className="space-y-3">
-          <a 
-            href={`https://wa.me/923001234567?text=I%20want%20to%20order%20${product.id}%20(${formatPKR(product.ramadanPrice || product.price)})`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-grow bg-trust-green text-white py-3 rounded-xl font-bold text-sm shadow-md hover:bg-opacity-90 transition-all flex items-center justify-center gap-2"
-          >
-             <MessageCircle size={18} fill="white" /> {t("actions.quickOrder")}
-          </a>
-          
-          <div className="flex items-center justify-between text-xs">
-             <span className={cn("font-bold", product.inStock ? "text-green-600" : "text-orange-500")}>
-               ● {product.inStock ? t("actions.inStock") : t("actions.orderTomorrow")}
-             </span>
-          </div>
-        </div>
+        {/* Action */}
+        <a 
+          href={`https://wa.me/9230104524400?text=I%20want%20to%20order%20${product.id}%20(${formatPKR(product.ramadanPrice || product.price)})`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full bg-trust-green text-white py-2.5 rounded-lg font-bold text-sm hover:bg-opacity-90 transition-all flex items-center justify-center gap-2 mt-auto"
+        >
+           <MessageCircle size={16} /> Order on WhatsApp
+        </a>
       </div>
     </motion.div>
   );

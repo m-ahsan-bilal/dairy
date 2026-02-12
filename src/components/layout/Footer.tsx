@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { 
   Facebook, 
   Instagram, 
@@ -58,11 +59,11 @@ export const Footer = () => {
 {/* Column 2: Quick Links */}
            <FooterColumn title={t("links.title")}>
              <ul className="space-y-3">
-               <li><a href="#" className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block">{t("links.home")}</a></li>
-               <li><a href="#products" className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block">{t("links.products")}</a></li>
-               <li><a href="#subscriptions" className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block">{t("links.plans")}</a></li>
-               <li><a href="#ramadan" className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block">{t("links.ramadan")}</a></li>
-               <li><a href="#about" className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block">{t("links.about")}</a></li>
+               <li><Link href="/" className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block">{t("links.home")}</Link></li>
+               <li><Link href="/#products" className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block">{t("links.products")}</Link></li>
+               <li><Link href="/#subscription" className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block">{t("links.plans")}</Link></li>
+               <li><Link href="/#contact" className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block">{t("links.ramadan")}</Link></li>
+               <li><Link href="/#about" className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block">{t("links.about")}</Link></li>
              </ul>
            </FooterColumn>
 

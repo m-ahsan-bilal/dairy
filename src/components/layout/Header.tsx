@@ -37,9 +37,9 @@ export const Header = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Products", href: "/products" }, // Assuming we might have a separate page or section
-    { name: "Areas", href: "#areas" },
-    { name: "Contact", href: "#contact" },
+    { name: "Products", href: "/#products" },
+    { name: "Areas", href: "/#areas" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (

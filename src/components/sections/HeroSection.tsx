@@ -3,121 +3,137 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
-import { 
-  PhoneCall, 
-  Star,
-  CheckCircle,
-  MapPin
-} from "lucide-react";
-import { fadeInUp, staggerContainer, scaleOnHover } from "@/lib/animations";
+import { ArrowRight } from "lucide-react";
 
 export const HeroSection = () => {
-  const t = useTranslations("Hero");
-  const rT = useTranslations("Ramadan");
-
   return (
-    <section 
-      className="relative min-h-[90vh] flex flex-col items-center justify-start pt-32 overflow-hidden bg-white"
-      aria-label="Hero Section"
-    >
-      {/* Background Image - Static for performance */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero/hero-bg.png"
-          alt="Fresh Milk Pouring"
-          fill
-          priority
-          className="object-cover opacity-20 md:opacity-40"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/50 to-white" />
+    <section className="relative w-full min-h-[90vh] flex items-center bg-gradient-to-br from-green-50 via-white to-emerald-50 overflow-hidden">
+      
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-green-100 rounded-full opacity-40 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-emerald-100 rounded-full opacity-30 blur-3xl"></div>
+        {/* Dots Pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: 'radial-gradient(circle, #166534 1px, transparent 1px)',
+          backgroundSize: '30px 30px',
+        }}></div>
       </div>
 
-      {/* Ramadan Banner */}
-      <div className="absolute top-0 w-full bg-ramadan-gold text-white text-center py-2 z-20 font-bold animate-pulse">
-        {rT("title")} - {rT("milkOffer.save")}!
-      </div>
+      <div className="container mx-auto px-4 max-w-7xl relative z-10 flex flex-col md:flex-row items-center gap-12 py-20">
+        
+        {/* Left: Text Content */}
+        <div className="flex-1 text-center md:text-left space-y-8">
+           <motion.div 
+             initial={{ y: 20, opacity: 0 }}
+             animate={{ y: 0, opacity: 1 }}
+             transition={{ delay: 0.1 }}
+             className="inline-block"
+           >
+             <span className="bg-green-100 text-green-800 px-5 py-2 rounded-full text-sm font-bold tracking-wide uppercase border border-green-200">
+               🌿 100% Organic & Fresh
+             </span>
+           </motion.div>
 
-      {/* Main Content Container */}
-      <div className="container relative z-10 mx-auto px-4 md:px-6 max-w-7xl mt-10">
-        <motion.div
-           variants={staggerContainer}
-           initial="hidden"
-           animate="visible"
-           className="flex flex-col items-center text-center space-y-6"
-        >
-          {/* Headline */}
-          <div className="space-y-4">
-            <motion.h1 
-              variants={fadeInUp}
-              className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-trust-green leading-tight font-urdu"
-            >
-              {t("headline")}
-            </motion.h1>
-            <motion.p 
-              variants={fadeInUp}
-              className="text-lg md:text-2xl text-authority-blue max-w-2xl mx-auto font-sans font-medium"
-            >
-              {t("subheadline")}
-            </motion.p>
-             <motion.div variants={fadeInUp} className="flex items-center justify-center gap-2 text-gray-500 text-sm">
-                <MapPin size={16} />
-                <span>{t("socialProof")}</span>
-             </motion.div>
-          </div>
+           <motion.h1 
+             initial={{ y: 30, opacity: 0 }}
+             animate={{ y: 0, opacity: 1 }}
+             transition={{ delay: 0.2, duration: 0.6 }}
+             className="text-5xl md:text-7xl font-extrabold text-gray-900 leading-[1.1]"
+           >
+             Farm Fresh{" "}
+             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
+               Milk
+             </span>{" "}
+             &amp; <br/> Dairy Products
+           </motion.h1>
 
-          {/* Pricing Highlight */}
-          <motion.div variants={fadeInUp} className="bg-red-50 border-2 border-red-100 p-4 rounded-2xl max-w-md w-full mx-auto my-4 transform -rotate-1">
-             <p className="text-red-500 font-bold mb-1 uppercase tracking-wider text-xs">{rT("milkOffer.name")}</p>
-             <div className="flex items-end justify-center gap-2">
-               <span className="text-4xl font-black text-red-600 font-sans">Rs. 200</span>
-               <span className="text-lg text-gray-400 line-through font-sans mb-1">Rs. 230</span>
-               <span className="text-sm font-bold text-red-500 mb-2">/ Liter</span>
-             </div>
-          </motion.div>
+           <motion.p 
+             initial={{ y: 30, opacity: 0 }}
+             animate={{ y: 0, opacity: 1 }}
+             transition={{ delay: 0.3, duration: 0.6 }}
+             className="text-xl text-gray-600 max-w-lg mx-auto md:mx-0 leading-relaxed"
+           >
+             We offer a wide range of pure, unadulterated Milk &amp; Dairy Products delivered straight to your doorstep.
+           </motion.p>
 
-          {/* CTA Group */}
-          <motion.div 
-            variants={fadeInUp}
-            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4"
-          >
-            <motion.a
-              href="https://wa.me/9230104524400"
-              variants={scaleOnHover}
-              whileHover="hover"
-              whileTap="tap"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] text-white rounded-full font-bold text-lg shadow-xl hover:bg-[#20bd5a] transition-colors"
-            >
-              <PhoneCall size={20} />
-              {t("ctaWhatsApp")}
-            </motion.a>
-            <Link
-              href="/products"
-              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-trust-green text-trust-green rounded-full font-bold text-lg hover:bg-trust-green hover:text-white transition-all"
-            >
-              {t("ctaProducts")}
-            </Link>
-          </motion.div>
-        </motion.div>
+           <motion.div
+             initial={{ y: 30, opacity: 0 }}
+             animate={{ y: 0, opacity: 1 }}
+             transition={{ delay: 0.4, duration: 0.6 }}
+             className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4"
+           >
+              <a 
+                href="#shop" 
+                className="bg-gradient-to-r from-green-600 to-emerald-500 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg shadow-green-200 hover:shadow-xl hover:shadow-green-300 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                 Shop Now <ArrowRight size={20} />
+              </a>
+              <a 
+                href="#contact" 
+                className="bg-white text-gray-800 border-2 border-gray-200 px-10 py-4 rounded-full font-bold text-lg hover:border-green-500 hover:text-green-600 transition-all duration-300"
+              >
+                 Contact Us
+              </a>
+           </motion.div>
+
+           {/* Trust Badges */}
+           <motion.div
+             initial={{ opacity: 0 }}
+             animate={{ opacity: 1 }}
+             transition={{ delay: 0.6 }}
+             className="flex flex-wrap items-center gap-6 justify-center md:justify-start pt-4 text-sm text-gray-500"
+           >
+             <span className="flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full"></span> Free Delivery</span>
+             <span className="flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full"></span> 100% Pure</span>
+             <span className="flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full"></span> Farm Direct</span>
+           </motion.div>
+        </div>
+
+        {/* Right: Hero Image */}
+        <div className="flex-1 relative w-full h-[400px] md:h-[500px]">
+           <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.3, type: 'spring', stiffness: 100 }}
+              className="relative w-full h-full"
+           >
+              {/* Main Hero Product Image */}
+              <Image 
+                src="/images/products/milk-bottle.png" 
+                alt="Fresh Milk Bottle"
+                fill
+                className="object-contain drop-shadow-2xl"
+                priority
+              />
+              
+              {/* Floating Badge */}
+              <motion.div 
+                animate={{ y: [0, -10, 0] }}
+                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                className="absolute top-10 right-10 bg-white p-5 rounded-2xl shadow-xl border border-green-100"
+              >
+                 <div className="text-center">
+                    <span className="block text-3xl font-black text-green-600">100%</span>
+                    <span className="text-xs uppercase font-bold text-gray-500 tracking-wider">Pure</span>
+                 </div>
+              </motion.div>
+
+              {/* Price Badge */}
+              <motion.div 
+                animate={{ y: [0, 8, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
+                className="absolute bottom-20 left-0 bg-white p-4 rounded-2xl shadow-xl border border-green-100"
+              >
+                 <div className="text-center">
+                    <span className="text-xs text-gray-400 block">Starting from</span>
+                    <span className="block text-2xl font-black text-green-600">₨ 200</span>
+                    <span className="text-xs text-gray-500">/Liter</span>
+                 </div>
+              </motion.div>
+           </motion.div>
+        </div>
       </div>
     </section>
   );
 };
-
-const TrustItem = ({ icon, label }: { icon: React.ReactNode; label: string }) => (
-  <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-100 shadow-sm whitespace-nowrap">
-    <span className="text-trust-green">{icon}</span>
-    <span className="text-xs font-bold text-trust-green uppercase tracking-tight">{label}</span>
-  </div>
-);
-
-const StatItem = ({ icon, label }: { icon: React.ReactNode; label: string }) => (
-  <div className="flex flex-col items-center text-center space-y-2">
-    <div className="p-3 bg-white rounded-2xl shadow-sm border border-gray-50 mb-1">
-      {icon}
-    </div>
-    <span className="text-sm font-bold text-trust-green font-sans">{label}</span>
-  </div>
-);

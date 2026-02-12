@@ -7,8 +7,10 @@ import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import { Header } from "@/components/layout/Header";
 import { FloatingContact } from "@/components/layout/FloatingContact";
+import { MobileNav } from "@/components/layout/MobileNav";
 import { OfflineBanner } from "@/components/ui/offline-banner";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
+import { CartProvider } from "@/context/CartContext";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const notoNastaliqUrdu = Noto_Nastaliq_Urdu({
@@ -46,11 +48,14 @@ export default async function LocaleLayout({
         className={`${inter.variable} ${notoNastaliqUrdu.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
+          <CartProvider>
             <OfflineBanner />
             <SchemaMarkup />
             <Header />
             {children}
             <FloatingContact />
+            <MobileNav />
+          </CartProvider>
         </NextIntlClientProvider>
       </body>
     </html>

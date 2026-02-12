@@ -1,7 +1,19 @@
 {
   "HomePage": {
     "title": "Qasim Milk Shop",
-    "subtitle": "Pure and Fresh Milk Delivered to Your Doorstep"
+    "subtitle": "Pure and Fresh Milk Delivered to Your Doorstep",
+    "promise": {
+      "title": "Our Promise: 100% Pure",
+      "subtitle": "Hamara Waada: 100% Khalis",
+      "desc": "For over 5 years, Qasim Milk Shop has been the gold standard for dairy in Lahore. We don't just deliver milk; we deliver health, trust, and morning smiles to your doorstep before the city wakes up."
+    }
+  },
+  "MobileNav": {
+    "home": "Home",
+    "shop": "Shop",
+    "offers": "Offers",
+    "account": "Account",
+    "contact": "Support"
   },
   "Hero": {
     "headline": "Pure. Fresh. Delivered Morning & Evening.",
@@ -55,7 +67,13 @@
       "cta": "Subscribe Now"
     },
     "guarantee": "All Ramadan offers backed by our 100% purity guarantee",
-    "orderNow": "Order Now"
+    "orderNow": "Order Now",
+    "bundle": {
+      "title": "Ramadan Family Bundle",
+      "subtitle": "Get Fresh Milk & Yogurt Delivered Daily",
+      "offer1": "Fresh Milk: Rs. 200/Liter",
+      "offer2": "Yogurt: Rs. 200/kg"
+    }
   },
   "Products": {
     "title": "Our Fresh Products",
@@ -97,6 +115,8 @@
         "title": "Punjab Food Authority Registered",
         "badge": "Verified",
         "desc": "Licensed & Approved",
+        "number": "LHR-12345",
+        "valid": "Dec 2026",
         "btn": "View Certificate"
       },
       "lab": {
@@ -216,7 +236,17 @@
       "product": "Product",
       "quantity": "Quantity",
       "message": "Special Instructions",
-      "submit": "Send on WhatsApp"
+      "submit": "Send on WhatsApp",
+      "types": {
+        "oneTime": "One-time Order",
+        "subscription": "Subscription"
+      }
+    },
+    "payment": {
+      "title": "Payment Methods",
+      "cod": "Cash on Delivery",
+      "digital": "EasyPaisa / JazzCash",
+      "secure": "Secure Payment"
     }
   },
   "Footer": {
